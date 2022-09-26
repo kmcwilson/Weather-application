@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="initial-scale=1.0"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="./assets/style.css" />
+        <title>Weather Dashboard</title>
+    </head>
+<body>
+    <header class="jumbotron custom-header">
+        <h1 class="title text-center">Weather Dashboard</h1>
+        <p class="description text-center"> A weather application to help plan your trip!</p>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-3 city-search">
+                <h3>Search for a city:</h3>
+                <input class="input-city" type="text" placeholder="Enter city here">
+                <button id="search-btn" type="submit">Search</button>
+                <ul class="past-cities"></ul>
+            </div>
+            <div class="col-9 current-city"></div>
+        </div>
+    </div>
+<script src="./assets/script.js"></script>
+</body>
+</html>
