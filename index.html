@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="initial-scale=1.0"/>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="./assets/style.css" />
-        <title>Weather Dashboard</title>
-    </head>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <title>Weather Dashboard</title>
+</head>
+
 <body>
     <header class="jumbotron custom-header">
         <h1 class="title text-center">Weather Dashboard</h1>
@@ -15,15 +17,28 @@
     </header>
     <div class="container">
         <div class="row">
-            <div class="col-3 city-search">
+            <div class="col-2 city-search">
                 <h3>Search for a city:</h3>
                 <input class="input-city" type="text" placeholder="Enter city here">
                 <button id="search-btn" type="submit">Search</button>
                 <ul class="past-cities"></ul>
             </div>
-            <div class="col-9 current-city"></div>
+            <div class="col-10 container">
+                <div class="row">
+                    <div class="col-10" id="current-city"> Current Weather</div>
+                </div>
+                <h2 class='row'>5 day forecast:</h2>
+                <div class="row" id='long-forecast'>
+                    <article class="col-2" id="box1">Box 1</article>
+                    <article class="col-2" id="box2">Box 2</article>
+                    <article class="col-2" id='box3'>Box 3</article>
+                    <article class="col-2" id="box4">Box 4</article>
+                    <article class="col-2" id='box5'>Box 5</article>
+                </div>
+            </div>
         </div>
     </div>
-<script src="./assets/script.js"></script>
+    <script src="./assets/script.js"></script>
 </body>
+
 </html>
