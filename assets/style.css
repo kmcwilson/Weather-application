@@ -1,9 +1,8 @@
 .custom-header{
-    background-color: rgb(73, 73, 174);
+   background:linear-gradient( rgb(177, 177, 216),rgb(108, 108, 207));
     color:white;
     font-family:Arial, Helvetica, sans-serif;
  }
-
  .search-btn{
     background-color: gray;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -18,4 +17,31 @@
     list-style: none;
     text-transform:capitalize;
     font-style: bold;
+ }
+
+ #current-city{
+   margin-left: 30px;
+   justify-content: space-around;
+   font-size: larger;
+   font-weight: bold;
+   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ }
+
+ .five-day {
+   margin-left: 30px;
+ }
+
+ #long-forecast{
+   justify-content: space-around;
+   margin-left: 30px;
+ }
+
+ .future-forecast{
+  border-style:double;
+  background:linear-gradient( rgb(177, 177, 216),rgb(108, 108, 207));
+  list-style-type: none;
+ }
+
+ .weather-info{
+  font-size:medium;
  }
