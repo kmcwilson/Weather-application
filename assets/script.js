@@ -10,10 +10,6 @@ let cityName = cityInput.value.trim();
 
 
 
-const daysForecast = 'https://openweathermap.org/forecast5'
-
-
-
 function getCoordinates(cityName) {
     const requestUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=${apiKey}`;
     fetch(requestUrl)
