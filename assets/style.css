@@ -19,16 +19,28 @@
     font-style: bold;
  }
 
+ .date-display{
+  margin-left:20px;
+  border-style:double;
+  background:linear-gradient( rgb(177, 177, 216),rgb(108, 108, 207));
+ }
+
  #current-city{
-   margin-left: 30px;
-   justify-content: space-around;
+   margin-left: 20px;
    font-size: larger;
    font-weight: bold;
    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   list-style-type: none;
+ }
+
+ #city-header{
+  text-transform: capitalize;
  }
 
  .five-day {
    margin-left: 30px;
+   margin-top: 20px;
+   margin-bottom: 20px;
  }
 
  #long-forecast{

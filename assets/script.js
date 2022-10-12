@@ -4,6 +4,7 @@ let cityInput = document.querySelector('.input-city');
 const currentCity = document.getElementById('current-city');
 const fiveDays = document.getElementById('long-forecast');
 const apiKey = '924b7419ff70c0bc92431d764dab8a64';
+let cityDisplay = document.getElementById('city-header');
 let cityName = cityInput.value.trim();
 
 
@@ -36,7 +37,7 @@ function searchWeather(lat, lon) {
             return response.json();
         })
         .then(function (data) {
-            console.log(data);
+            console.log(data.list);
             displayWeather(data.list);
         })
 
@@ -47,22 +48,18 @@ function searchWeather(lat, lon) {
 function displayWeather(data) {
 
     const currentDayList = document.createElement('li');
-    const feelsLike = document.createElement('li');
     const weatherImg = document.createElement('img');
     const weatherIcon = data[0].weather[0].icon;
-    const currentDate = document.createElement('li');
-    let cityDisplay = document.getElementById('city-header');
+    const currentDate = document.getElementById('current-date');
     weatherImg.classList.add('weather-img');
     weatherImg.src = `https://openweathermap.org/img/wn/${weatherIcon}.png`
     currentDayList.classList.add('current-day');
-    currentDayList.textContent = `Current Temperature: ${data[0].main.temp}`;
-    feelsLike.textContent = `Feels like: ${data[0].main.feels_like}`
+    currentDayList.innerHTML = `Current Temperature: ${data[0].main.temp} <br> Feels like: ${data[0].main.feels_like}`
     currentCity.appendChild(currentDayList);
-    currentCity.appendChild(feelsLike);
-    currentCity.appendChild(weatherImg);
     cityDisplay.textContent = cityName;
+    cityDisplay.appendChild(weatherImg);
     currentDate.textContent = data[0].dt_txt.slice(0, 11);
-    cityDisplay.appendChild(currentDate);
+
 
 
 
@@ -75,7 +72,7 @@ function displayWeather(data) {
         const fiveDayIcon = data[i].weather[0].icon;
         fiveDayImg.classList.add('five-day-img');
         fiveDayImg.src = `https://openweathermap.org/img/wn/${fiveDayIcon}.png`;
-        futureTemp.textContent = `Temperature: ${data[i].main.temp}`;
+        futureTemp.innerHTML = `Temperature: ${data[i].main.temp} <br> Feels like: ${data[i].main.feels_like}`;
         fiveDayDates.textContent = data[i].dt_txt.slice(0, 11);
         fiveDays.appendChild(fiveDayDates);
         fiveDayDates.appendChild(futureTemp);
@@ -83,13 +80,17 @@ function displayWeather(data) {
     };
 }
 
-searchBtn.addEventListener('click', function () {
+searchBtn.addEventListener('click', function (event) {
+    event.preventDefault();
+    cityName= cityInput.value.trim();
     if (!cityName) {
         return
     } else {
         currentCity.textContent = '';
         fiveDays.textContent = '';
+        cityDisplay.textContent = '';
     }
+    cityDisplay.textContent = cityName;
     storeCities(cityName);
     getCoordinates(cityName);
 })
@@ -118,6 +119,8 @@ function renderCityList() {
             cityName = cityItem.textContent;
             fiveDays.textContent = '';
             currentCity.textContent = '';
+            cityDisplay.textContent = '';
+            cityDisplay.textContent = cityName;
             getCoordinates(cityName);
             storeCities(cityName);
         })
