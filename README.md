@@ -8,6 +8,11 @@ This is a weather application that allows users to search a specific location an
 
 Here is a screenshot of the application
 
+![weather-dashboard.jpg](C:\Users\kmcwi\bootcamp\challenges\challenge6\challenge-6-weather-application\assets\weather-dashboard.jpg)
+
 
 ## Link to live website
+
+[Link to live website](https://kmcwilson.github.io/challenge-6-weather-application/)
+
 

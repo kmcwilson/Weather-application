@@ -15,7 +15,7 @@ const daysForecast = 'https://openweathermap.org/forecast5'
 
 
 function getCoordinates(cityName) {
-    const requestUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=${apiKey}`;
+    const requestUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=${apiKey}`;
     fetch(requestUrl)
 
         .then(function (response) {
