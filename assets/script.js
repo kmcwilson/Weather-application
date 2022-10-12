@@ -25,7 +25,6 @@ function getCoordinates(cityName) {
             let lat = data[0].lat;
             let lon = data[0].lon;
             searchWeather(lat, lon);
-            console.log(data);
         })
 };
 
@@ -50,15 +49,13 @@ function displayWeather(data) {
     const currentDayList = document.createElement('li');
     const weatherImg = document.createElement('img');
     const weatherIcon = data[0].weather[0].icon;
-    const currentDate = document.getElementById('current-date');
     weatherImg.classList.add('weather-img');
     weatherImg.src = `https://openweathermap.org/img/wn/${weatherIcon}.png`
     currentDayList.classList.add('current-day');
-    currentDayList.innerHTML = `Current Temperature: ${data[0].main.temp} <br> Feels like: ${data[0].main.feels_like}`
+    currentDayList.innerHTML = `${data[0].dt_txt.slice(0, 11)} <br> Current Temperature: ${data[0].main.temp}C <br> Feels like: ${data[0].main.feels_like}C <br> Wind Speed: ${data[0].wind.speed} mph`
     currentCity.appendChild(currentDayList);
     cityDisplay.textContent = cityName;
     cityDisplay.appendChild(weatherImg);
-    currentDate.textContent = data[0].dt_txt.slice(0, 11);
 
 
 
@@ -72,7 +69,7 @@ function displayWeather(data) {
         const fiveDayIcon = data[i].weather[0].icon;
         fiveDayImg.classList.add('five-day-img');
         fiveDayImg.src = `https://openweathermap.org/img/wn/${fiveDayIcon}.png`;
-        futureTemp.innerHTML = `Temperature: ${data[i].main.temp} <br> Feels like: ${data[i].main.feels_like}`;
+        futureTemp.innerHTML = `Temperature: ${data[i].main.temp}C <br> Feels like: ${data[i].main.feels_like}C <br> Wind Speed: ${data[i].wind.speed} mph`;
         fiveDayDates.textContent = data[i].dt_txt.slice(0, 11);
         fiveDays.appendChild(fiveDayDates);
         fiveDayDates.appendChild(futureTemp);
@@ -82,7 +79,7 @@ function displayWeather(data) {
 
 searchBtn.addEventListener('click', function (event) {
     event.preventDefault();
-    cityName= cityInput.value.trim();
+    cityName = cityInput.value.trim();
     if (!cityName) {
         return
     } else {
