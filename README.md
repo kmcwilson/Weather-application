@@ -8,7 +8,7 @@ This is a weather application that allows users to search a specific location an
 
 Here is a screenshot of the application
 
-![weather-dashboard.jpg](C:\Users\kmcwi\bootcamp\challenges\challenge6\challenge-6-weather-application\assets\weather-dashboard.jpg)
+![weather-dashboard](https://user-images.githubusercontent.com/110554091/195407316-45558f39-6cdd-4217-967e-4c891dd3f235.jpg)
 
 
 ## Link to live website
