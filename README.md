@@ -13,6 +13,6 @@ Here is a screenshot of the application
 
 ## Link to live website
 
-[Link to live website](https://kmcwilson.github.io/challenge-6-weather-application/)
+[Link to live website](https://kmcwilson.github.io/Weather-application/)
 
 
