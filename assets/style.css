@@ -2,7 +2,6 @@
   background: linear-gradient(rgb(177, 177, 216), rgb(108, 108, 207));
   font-family: Arial, Helvetica, sans-serif;
 }
-
 .search-btn {
   background-color: gray;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -59,4 +58,14 @@
 .weather-info {
   font-size: medium;
   justify-content: space-between;
+}
+@media screen and (max-width:992px){
+  .list-items {
+    width: 100px;
+  }
+}
+@media screen and (max-width:768px){
+  .list-items {
+    width: 100px;
+  }
 }
